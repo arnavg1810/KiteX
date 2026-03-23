@@ -1,0 +1,4 @@
+{
+  "buildCommand": "cd server && npm install",
+  "startCommand": "cd server && node src/index.js"
+}
