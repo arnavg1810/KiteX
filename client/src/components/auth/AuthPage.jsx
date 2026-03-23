@@ -167,15 +167,15 @@ export default function AuthPage() {
             </button>
           </form>
 
-          {/* Divider */}
-          <div className="flex items-center gap-3 my-5">
+          {/* Divider - Temporarily Disabled */}
+          {/* <div className="flex items-center gap-3 my-5">
             <div className="flex-1 h-px" style={{ background: 'rgba(255,255,255,0.1)' }}></div>
             <span className="text-xs text-kite-muted">OR</span>
             <div className="flex-1 h-px" style={{ background: 'rgba(255,255,255,0.1)' }}></div>
-          </div>
+          </div> */}
 
-          {/* Google Sign-In */}
-          <div className="flex justify-center">
+          {/* Google Sign-In - Temporarily Disabled */}
+          {/* <div className="flex justify-center">
             <GoogleLogin
               onSuccess={handleGoogleSuccess}
               onError={handleGoogleError}
@@ -183,7 +183,7 @@ export default function AuthPage() {
               text={tab === 'login' ? 'signin_with' : 'signup_with'}
               useOneTap={false}
             />
-          </div>
+          </div> */}
         </div>
 
         <p className="text-center text-xs text-kite-muted mt-6">
