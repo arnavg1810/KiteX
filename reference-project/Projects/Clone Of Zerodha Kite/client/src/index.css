@@ -1,0 +1,115 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    scrollbar-width: thin;
+    scrollbar-color: #233554 #0f3460;
+  }
+
+  *::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+
+  *::-webkit-scrollbar-track {
+    background: #0f3460;
+    border-radius: 3px;
+  }
+
+  *::-webkit-scrollbar-thumb {
+    background: #233554;
+    border-radius: 3px;
+  }
+
+  *::-webkit-scrollbar-thumb:hover {
+    background: #2979ff;
+  }
+
+  body {
+    overflow-x: hidden;
+  }
+
+  input, select, textarea {
+    @apply bg-kite-surface border-kite-border text-kite-text;
+  }
+
+  input::placeholder {
+    @apply text-kite-muted;
+  }
+}
+
+@layer components {
+  .glass-card {
+    @apply bg-kite-surface/80 backdrop-blur-md border border-kite-border/50 rounded-xl;
+  }
+
+  .glass-card-hover {
+    @apply glass-card hover:border-kite-blue/40 transition-all duration-200;
+  }
+
+  .btn-primary {
+    @apply px-4 py-2 bg-kite-blue text-white font-medium rounded-lg 
+           hover:bg-blue-600 active:scale-[0.98] transition-all duration-150;
+  }
+
+  .btn-buy {
+    @apply px-4 py-2 bg-kite-green/20 text-kite-green border border-kite-green/30 
+           font-semibold rounded-lg hover:bg-kite-green/30 active:scale-[0.98] 
+           transition-all duration-150;
+  }
+
+  .btn-sell {
+    @apply px-4 py-2 bg-kite-red/20 text-kite-red border border-kite-red/30 
+           font-semibold rounded-lg hover:bg-kite-red/30 active:scale-[0.98] 
+           transition-all duration-150;
+  }
+
+  .badge-positive {
+    @apply inline-flex items-center px-2 py-0.5 rounded-full text-xs font-medium 
+           bg-green-500/15 text-green-400 border border-green-500/20;
+  }
+
+  .badge-negative {
+    @apply inline-flex items-center px-2 py-0.5 rounded-full text-xs font-medium 
+           bg-red-500/15 text-red-400 border border-red-500/20;
+  }
+
+  .badge-neutral {
+    @apply inline-flex items-center px-2 py-0.5 rounded-full text-xs font-medium 
+           bg-yellow-500/15 text-yellow-400 border border-yellow-500/20;
+  }
+
+  .skeleton {
+    @apply animate-pulse bg-kite-border/40 rounded;
+  }
+
+  .ticker-wrap {
+    @apply overflow-hidden whitespace-nowrap;
+  }
+
+  .ticker-content {
+    @apply inline-flex animate-ticker;
+  }
+
+  .price-up {
+    @apply text-kite-green;
+  }
+
+  .price-down {
+    @apply text-kite-red;
+  }
+
+  .glow-green {
+    box-shadow: 0 0 15px rgba(0, 200, 83, 0.15);
+  }
+
+  .glow-red {
+    box-shadow: 0 0 15px rgba(255, 23, 68, 0.15);
+  }
+
+  .glow-blue {
+    box-shadow: 0 0 20px rgba(41, 121, 255, 0.1);
+  }
+}

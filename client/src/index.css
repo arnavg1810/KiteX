@@ -1,0 +1,134 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --kite-bg: #0d0f14;
+  --kite-surface: #131720;
+  --kite-border: #233554;
+  --kite-text: #e8eaed;
+  --kite-muted: #8b95a5;
+  --kite-blue: #2979ff;
+  --kite-accent: #00e5ff;
+  --kite-green: #00c853;
+  --kite-red: #ff1744;
+  --kite-yellow: #ffd600;
+}
+
+body {
+  margin: 0;
+  font-family: 'DM Sans', system-ui, sans-serif;
+  background: var(--kite-bg);
+  color: var(--kite-text);
+  -webkit-font-smoothing: antialiased;
+}
+
+.font-display {
+  font-family: 'Syne', sans-serif;
+}
+
+.font-mono {
+  font-family: 'JetBrains Mono', monospace;
+}
+
+.glass-card {
+  @apply rounded-xl border border-white/5 bg-white/[0.03] shadow-lg backdrop-blur-sm;
+}
+
+.glass-card-hover:hover {
+  border-color: rgba(41, 121, 255, 0.2);
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.price-up {
+  color: var(--kite-green);
+}
+
+.price-down {
+  color: var(--kite-red);
+}
+
+.btn-primary {
+  @apply rounded-lg px-4 py-2 text-sm font-semibold text-white transition-colors;
+  background: var(--kite-blue);
+}
+.btn-primary:hover {
+  background: rgba(41, 121, 255, 0.9);
+}
+
+.btn-buy {
+  @apply text-white transition-colors;
+  background: var(--kite-green);
+}
+.btn-buy:hover {
+  background: rgba(0, 200, 83, 0.9);
+}
+
+.btn-sell {
+  @apply text-white transition-colors;
+  background: var(--kite-red);
+}
+.btn-sell:hover {
+  background: rgba(255, 23, 68, 0.9);
+}
+
+.glow-green {
+  box-shadow: 0 0 20px rgba(0, 200, 83, 0.15);
+}
+
+.glow-red {
+  box-shadow: 0 0 20px rgba(255, 23, 68, 0.15);
+}
+
+.skeleton {
+  @apply rounded;
+  background: rgba(35, 53, 84, 0.4);
+}
+
+.ticker-wrap {
+  overflow: hidden;
+  white-space: nowrap;
+}
+.ticker-content {
+  display: inline-flex;
+  will-change: transform;
+  animation: ticker 100s linear infinite;
+}
+@keyframes ticker {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-66.67%); }
+}
+
+.badge-positive {
+  background: rgba(0, 200, 83, 0.15);
+  color: var(--kite-green);
+}
+
+.badge-negative {
+  background: rgba(255, 23, 68, 0.15);
+  color: var(--kite-red);
+}
+
+.badge-neutral {
+  background: rgba(139, 149, 165, 0.2);
+  color: var(--kite-muted);
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--kite-bg);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--kite-border);
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #3a4a6a;
+}

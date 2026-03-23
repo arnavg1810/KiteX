@@ -4,16 +4,15 @@
 /node_modules
 /.pnp
 .pnp.js
+*/node_modules
 
 # testing
 /coverage
 
-# next.js
-/.next/
-/out/
-
 # production
 /build
+/dist
+*/dist
 
 # misc
 .DS_Store
@@ -23,14 +22,25 @@
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+.log
 
 # local env files
 .env*.local
 .env
+server/.env
+client/.env
 
-# vercel
-.vercel
+# IDE
+.vscode
+.idea
+*.swp
+*.swo
 
-# typescript
+# OS
+Thumbs.db
+
+# Google OAuth credentials
+client_secret_*.json
+
+# TypeScript
 *.tsbuildinfo
-next-env.d.ts
