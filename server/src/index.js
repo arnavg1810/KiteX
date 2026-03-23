@@ -1,5 +1,9 @@
 const path = require('path');
-require('dotenv').config({ path: path.join(__dirname, '..', '.env') });
+// Load .env from server directory
+const envPath = process.env.NODE_ENV === 'production' 
+  ? path.join(__dirname, '..', '.env')
+  : path.join(__dirname, '..', '.env');
+require('dotenv').config({ path: envPath });
 
 const express = require('express');
 const http = require('http');
