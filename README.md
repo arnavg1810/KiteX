@@ -23,31 +23,17 @@ The project is fully deployed and running in production. You do not need to run 
 
 ---
 
-## ⚡ Local Development Quick Start (2 Minutes)
+## ⚡ Quick Start (2 Minutes)
 
-*Note: Follow these steps only if you want to run or modify the code locally.*
-
-### 1. Terminal 1: Start Backend
-```bash
-cd server
-npm.cmd start
+### 1. Open Browser
+```
+https://kitex.vercel.app
 ```
 
-### 2. Terminal 2: Start Frontend  
-```bash
-cd client
-npm.cmd run dev
-```
-
-### 3. Open Browser
-```
-http://localhost:5173
-```
-
-### 4. Login
-- **Email**: any_email@example.com  
-- **Password**: any_password
-- (Registration enabled for new accounts)
+### 2. Login
+- **Email**: testuser123@example.com  
+- **Password**: Test1234!
+- (Or register a new account to test everything)
 
 ---
 
