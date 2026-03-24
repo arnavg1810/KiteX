@@ -68,15 +68,17 @@ After redeployment, verify the configuration:
 ### Example Configuration
 
 **Production (https://kitex.vercel.app):**
-```
-VITE_API_URL = https://api.kitex.app
-VITE_GOOGLE_CLIENT_ID = 123456789.apps.googleusercontent.com
+```env
+VITE_API_URL = https://kitex.onrender.com/api
+VITE_GOOGLE_CLIENT_ID = your_production_google_client_id.apps.googleusercontent.com
 ```
 
+> **Note on WebSockets:** The app is configured to automatically connect the WebSocket to the base of your `VITE_API_URL` (by stripping the `/api` suffix) so it will seamlessly connect to `https://kitex.onrender.com` in production.
+
 **Preview (https://feature-branch.kitex.vercel.app):**
-```
-VITE_API_URL = https://staging-api.kitex.app
-VITE_GOOGLE_CLIENT_ID = 987654321.apps.googleusercontent.com
+```env
+VITE_API_URL = https://staging-backend.com/api
+VITE_GOOGLE_CLIENT_ID = your_staging_google_client_id.apps.googleusercontent.com
 ```
 
 ### Building Locally with Environment Variables

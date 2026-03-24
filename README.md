@@ -154,6 +154,11 @@ JWT_EXPIRE=7d
 
 # Client
 CLIENT_URL=http://localhost:5173
+GOOGLE_CLIENT_ID=your_google_client_id
+
+# Frontend (.env.production for Vercel)
+VITE_API_URL=https://kitex.onrender.com/api
+VITE_GOOGLE_CLIENT_ID=your_google_client_id
 
 # Optional: Real Data APIs
 TWELVEDATA_API_KEY=          # Stock quotes
@@ -417,8 +422,18 @@ This project is provided as-is for educational and demonstration purposes.
 
 ---
 
-**Version**: 1.0.0  
-**Status**: ✅ Production-Ready for Local Development  
-**Last Updated**: March 11, 2026
+## 🚀 Production Deployment Notes
+
+To deploy KiteX to production (e.g., Vercel for frontend, Render for backend):
+
+1. **Backend URL**: In your frontend `VITE_API_URL` on Vercel, ensure you append `/api` to the backend URL (e.g., `https://kitex.onrender.com/api`).
+2. **WebSockets**: The frontend is configured to automatically strip `/api` from `VITE_API_URL` to connect to the Socket.IO server at the backend's root.
+3. **Google OAuth**: Ensure `VITE_GOOGLE_CLIENT_ID` is set on the Vercel frontend, and `GOOGLE_CLIENT_ID` is set on the backend. Add your production frontend URL (e.g., `https://kitex.vercel.app`) to your **Authorized JavaScript origins** and **Authorized redirect URIs** in the Google Cloud Console.
+
+---
+
+**Version**: 1.0.1  
+**Status**: ✅ Production-Ready 
+**Last Updated**: March 2026
 
 Built with ❤️ using React, Express, and MongoDB
