@@ -9,29 +9,31 @@ A full-stack, real-time stock trading platform clone featuring live market data,
 
 ---
 
+## 🌍 Live Demo
+
+The project is fully deployed and running in production. You do not need to run it locally to test it.
+
+🔗 **Frontend (Vercel)**: [https://kitex.vercel.app](https://kitex.vercel.app)  
+⚙️ **Backend (Render)**: `https://kitex.onrender.com`
+
+**Demo Credentials:**
+- **Email**: testuser123@example.com
+- **Password**: Test1234!
+*(Or feel free to register a new account on the live site)*
+
+---
+
 ## ⚡ Quick Start (2 Minutes)
 
-### 1. Terminal 1: Start Backend
-```bash
-cd server
-npm.cmd start
+### 1. Open Browser
+```
+https://kitex.vercel.app
 ```
 
-### 2. Terminal 2: Start Frontend  
-```bash
-cd client
-npm.cmd run dev
-```
-
-### 3. Open Browser
-```
-http://localhost:5173
-```
-
-### 4. Login
-- **Email**: any_email@example.com  
-- **Password**: any_password
-- (Registration enabled for new accounts)
+### 2. Login
+- **Email**: testuser123@example.com  
+- **Password**: Test1234!
+- (Or register a new account to test everything)
 
 ---
 
@@ -154,6 +156,11 @@ JWT_EXPIRE=7d
 
 # Client
 CLIENT_URL=http://localhost:5173
+GOOGLE_CLIENT_ID=your_google_client_id
+
+# Frontend (.env.production for Vercel)
+VITE_API_URL=https://kitex.onrender.com/api
+VITE_GOOGLE_CLIENT_ID=your_google_client_id
 
 # Optional: Real Data APIs
 TWELVEDATA_API_KEY=          # Stock quotes
@@ -417,8 +424,18 @@ This project is provided as-is for educational and demonstration purposes.
 
 ---
 
-**Version**: 1.0.0  
-**Status**: ✅ Production-Ready for Local Development  
-**Last Updated**: March 11, 2026
+## 🚀 Production Deployment Notes
+
+To deploy KiteX to production (e.g., Vercel for frontend, Render for backend):
+
+1. **Backend URL**: In your frontend `VITE_API_URL` on Vercel, ensure you append `/api` to the backend URL (e.g., `https://kitex.onrender.com/api`).
+2. **WebSockets**: The frontend is configured to automatically strip `/api` from `VITE_API_URL` to connect to the Socket.IO server at the backend's root.
+3. **Google OAuth**: Ensure `VITE_GOOGLE_CLIENT_ID` is set on the Vercel frontend, and `GOOGLE_CLIENT_ID` is set on the backend. Add your production frontend URL (e.g., `https://kitex.vercel.app`) to your **Authorized JavaScript origins** and **Authorized redirect URIs** in the Google Cloud Console.
+
+---
+
+**Version**: 1.0.1  
+**Status**: ✅ Production-Ready 
+**Last Updated**: March 2026
 
 Built with ❤️ using React, Express, and MongoDB
