@@ -31,7 +31,8 @@ export function WebSocketProvider({ children }) {
   const throttledRef = useRef(new Map());
 
   useEffect(() => {
-    const socket = io('/', {
+    const wsUrl = import.meta.env.VITE_API_URL?.replace(/\/api$/, '') || '/';
+    const socket = io(wsUrl, {
       transports: ['websocket', 'polling'],
       reconnection: true,
       reconnectionDelay: 1000,
