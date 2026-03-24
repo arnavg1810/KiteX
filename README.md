@@ -9,7 +9,23 @@ A full-stack, real-time stock trading platform clone featuring live market data,
 
 ---
 
-## ⚡ Quick Start (2 Minutes)
+## 🌍 Live Demo
+
+The project is fully deployed and running in production. You do not need to run it locally to test it.
+
+🔗 **Frontend (Vercel)**: [https://kitex.vercel.app](https://kitex.vercel.app)  
+⚙️ **Backend (Render)**: `https://kitex.onrender.com`
+
+**Demo Credentials:**
+- **Email**: testuser123@example.com
+- **Password**: Test1234!
+*(Or feel free to register a new account on the live site)*
+
+---
+
+## ⚡ Local Development Quick Start (2 Minutes)
+
+*Note: Follow these steps only if you want to run or modify the code locally.*
 
 ### 1. Terminal 1: Start Backend
 ```bash
