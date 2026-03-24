@@ -1,0 +1,24 @@
+{
+  "version": 2,
+  "framework": "vite",
+  "buildCommand": "cd client && npm install && npm run build",
+  "outputDirectory": "client/dist",
+  "root": ".",
+  "env": {
+    "VITE_API_URL": {
+      "required": true,
+      "description": "Backend API URL for the application"
+    },
+    "VITE_GOOGLE_CLIENT_ID": {
+      "required": true,
+      "description": "Google OAuth Client ID"
+    }
+  },
+  "envPrefix": "VITE_",
+  "git": {
+    "deploymentEnabled": {
+      "main": true,
+      "production": true
+    }
+  }
+}
