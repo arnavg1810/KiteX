@@ -132,3 +132,28 @@ body {
 ::-webkit-scrollbar-thumb:hover {
   background: #3a4a6a;
 }
+
+/* Auth Form Styles */
+.auth-input {
+  backdrop-filter: blur(8px);
+}
+
+.auth-input:focus {
+  border-color: rgba(37, 99, 235, 0.6) !important;
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.12), 0 0 20px rgba(37, 99, 235, 0.06);
+}
+
+.auth-input-valid:focus {
+  border-color: rgba(16, 185, 129, 0.5) !important;
+  box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.1), 0 0 20px rgba(16, 185, 129, 0.05);
+}
+
+.auth-input-error:focus {
+  border-color: rgba(239, 68, 68, 0.5) !important;
+  box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.1), 0 0 20px rgba(239, 68, 68, 0.05);
+}
+
+.auth-label {
+  letter-spacing: 0.03em;
+}
+

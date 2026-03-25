@@ -1,5 +1,4 @@
 import { createContext, useContext, useState, useEffect, useCallback } from 'react';
-import { jwtDecode } from 'jwt-decode';
 import { authAPI } from '../services/api';
 
 const AuthContext = createContext(null);
@@ -45,23 +44,14 @@ export function AuthProvider({ children }) {
 
   const loginWithGoogle = async (googleToken) => {
     try {
-      // Decode the Google JWT token to get user info
-      const decoded = jwtDecode(googleToken);
-      
-      const googleData = {
-        googleId: decoded.sub,
-        email: decoded.email,
-        name: decoded.name,
-        picture: decoded.picture,
-      };
-
-      // Send to backend to create or find user
-      const { data } = await authAPI.loginWithGoogle(googleData);
+      // Send the raw credential token to the backend for server-side verification
+      const { data } = await authAPI.loginWithGoogle({ credential: googleToken });
       localStorage.setItem('kite_token', data.token);
       setUser(data.user);
       return data;
     } catch (err) {
-      throw new Error(err.response?.data?.error || 'Google authentication failed');
+      const message = err.response?.data?.error || 'Google authentication failed. Please try again.';
+      throw new Error(message);
     }
   };
 

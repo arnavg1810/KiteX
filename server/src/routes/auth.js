@@ -73,16 +73,17 @@ router.put('/preferences', protect, async (req, res) => {
 // Google OAuth route
 router.post('/google', async (req, res) => {
   try {
-    const { googleId, email, name, picture } = req.body;
+    const { credential } = req.body;
     
-    if (!googleId || !email) {
-      return res.status(400).json({ error: 'googleId and email are required' });
+    if (!credential) {
+      return res.status(400).json({ error: 'Google credential token is required' });
     }
 
-    const result = await findOrCreateGoogleUser(googleId, email, name, picture);
+    const result = await findOrCreateGoogleUser(credential);
     res.json(result);
   } catch (error) {
-    res.status(400).json({ error: error.message });
+    console.error('Google auth error:', error.message);
+    res.status(400).json({ error: error.message || 'Google authentication failed' });
   }
 });
 

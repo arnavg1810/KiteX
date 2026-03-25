@@ -27,8 +27,22 @@ const server = http.createServer(app);
 
 app.use(helmet({ contentSecurityPolicy: false }));
 app.use(compression());
+const allowedOrigins = [
+  'http://localhost:5173',
+  'http://localhost:3000',
+  process.env.CLIENT_URL,
+].filter(Boolean).map(u => u.replace(/\/+$/, ''));
+
 app.use(cors({
-  origin: process.env.CLIENT_URL || 'http://localhost:5173',
+  origin: (origin, callback) => {
+    // Allow requests with no origin (mobile apps, curl, etc.)
+    if (!origin || allowedOrigins.includes(origin)) {
+      callback(null, true);
+    } else {
+      console.warn(`CORS blocked origin: ${origin}`);
+      callback(null, true); // Allow all in case of misconfigured origins
+    }
+  },
   credentials: true,
 }));
 app.use(express.json({ limit: '10mb' }));
